@@ -1,0 +1,47 @@
+#include<iostream>
+#include<math.h>
+#include<bits/stdc++.h>
+#include<string.h>
+
+using std::endl;
+
+struct g{
+   int x, y, t, a;
+   int v[5];
+
+  }V;
+
+int main(){
+  g V;
+
+  for(V.x = 0; V.x < 5; V.x++){
+    std::cin>> V.v[V.x];
+    }
+
+    for(V.x = 4; V.x >= 0; V.x--){
+      for(V.y = V.x - 1; V.y >= 0; V.y--){
+        if(V.v[V.x] < V.v[V.y]){
+
+        V.a = V.v[V.x];
+        V.v[V.x] = V.v[V.y];
+        V.v[V.y] = V.a;
+
+      }
+    }
+  }
+  for(V.x = 4; V.x >= 0; V.x--){
+
+    std::cout<<"\n"<<V.v[V.x]<<endl;//Como vou comparar?
+    
+  }
+
+  for(V.x = 0; V.x <= 4; V.x++){
+    V.t = 0;
+    if(V.v[V.x] > V.t){
+      V.t = V.v[V.x];
+    }
+  }
+
+  std::cout<<"\n O maior numero da lista e: "<<V.t;
+// AQui pegue um "t" para comprar qual era o maior entre os da lista, e atribuindo com 0
+}
